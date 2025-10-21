@@ -10,13 +10,22 @@ To write a C Program to perform the basic left shift operation for 44 integer nu
 5.	Stop the program.
 
 ## PROGRAM
-
+```
+#include<stdio.h>
+int main(){
+    int a=60;
+    int result;
+    result=a>>3;
+    printf("After Right Shift Operation value of a is:%d\n",result);
+    return 0;
+}
+```
 ## OUTPUT
 
 
 
 
-
+![alt text](1.png)
 
 
 
@@ -47,9 +56,27 @@ Write a C Program to check whether the two numbers are equal or not using simple
 5.	Stop the program.
 
 ## PROGRAM
-
+```
+#include<stdio.h>
+int main(){
+    int a;
+    scanf("%d",&a);
+    if(a==0){
+        printf("Number is ZERO");
+    }
+    else if(a>0){
+        printf("Number is POSITIVE");
+    }
+    else{
+        printf("Number is NEGATIVE");
+    }
+    return 0;
+}
+```
 
 ## OUTPUT
+![alt text](2.png)
+
            
 ## RESULT
 
@@ -70,10 +97,25 @@ Write a C Program to convert the given string into lowercase.
 5.	Stop the program.
 
 ## PROGRAM
+```
+#include<stdio.h>
+#include<ctype.h>
+int main(){
+    char str[100];
+    scanf("%s",str);
+    for(int i = 0; str[i] != '\0'; i++) {
+        str[i] = tolower(str[i]);
+    }
 
+    printf("Lower case String is:%s\n", str);
+
+    return 0;
+}
+
+```
 ## OUTPUT
 
-
+![alt text](3.png)
 
 
 ## RESULT
@@ -95,11 +137,31 @@ Write a C Program to count the total number of words in a given string using do 
 6.	Stop the program.
 
 ## PROGRAM
+```
+#include <stdio.h>
+#include <string.h>
+int main() {
+    char str[200];
+    int i, count = 0;
+    fgets(str, sizeof(str), stdin); 
+    int len = strlen(str);
+    if (str[len - 1] == '\n')
+        str[len - 1] = '\0';
+    for (i = 0; str[i] != '\0'; i++) {
+        if ((str[i] != ' ' && str[i] != '\t') &&
+            (str[i + 1] == ' ' || str[i + 1] == '\t' || str[i + 1] == '\0')) {
+            count++;
+        }
+    }
+    printf("%d\n", count);
+    return 0;
+}
 
+```
 ## OUTPUT
 
 
-
+![alt text](4.png)
 
 
 ## RESULT
@@ -129,9 +191,31 @@ Step 7: After the loop, check the value of flag:
 Step 8: End the program.
 
 ## PROGRAM
-
+```
+#include<stdio.h>
+int main(){
+    char str1[100],str2[100];
+    int i=0,flag=0;
+    scanf("%s",str1);
+    scanf("%s",str2);
+    while(str1[i]!='\0'||str2[i]!='\0'){
+        if(str1[i]!=str2[i]){
+            flag=1;
+            break;
+        }
+        i++;
+    }
+    if(flag==0&&str1[i]=='\0'&&str2[i]=='\0')
+       printf("strings are same");
+    else
+       printf("strings are not same");
+    return 0;
+}
+```
 
 ## OUTPUT
+
+![alt text](5.png)
  
 
 ## RESULT
